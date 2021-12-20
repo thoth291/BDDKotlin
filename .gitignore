@@ -1,3 +1,23 @@
+#### Intellij related part
+
+.idea
+.DS_Store
+*.swp
+*~.nib
+
+build/
+adhoc/
+target/
+
+.xcodeproj/ !*.xcodeproj/project.pbxproj
+
+*.mode1v3
+*.mode2v3
+
+xcuserdata
+
+#### Kotlin related part
+
 # Compiled class file
 *.class
 
