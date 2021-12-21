@@ -5,8 +5,8 @@ import io.cucumber.testng.CucumberOptions
 
 @CucumberOptions(
     dryRun = true,
-    features = arrayOf("src/test/resources"),
-    glue = arrayOf("stepdefs"),
-    plugin = arrayOf("json:target/cucumber-report.json", "html:target/cucumber-html")
+    features = ["src/test/resources"],
+    glue = ["stepdefs"],
+    plugin = ["json:target/cucumber-report.json", "html:target/cucumber-html"]
 )
 class Runner: AbstractTestNGCucumberTests()
