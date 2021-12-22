@@ -3,7 +3,14 @@ import io.cucumber.java8.Scenario
 import io.cucumber.java8.En
 import org.testng.Assert
 
-
+fun toString(scenario:Scenario): String {
+    return  "Name: ${scenario.name} " +
+            "ID: ${scenario.id} " +
+            "Status: ${scenario.status} " +
+            "Line: ${scenario.line} " +
+            "URI: ${scenario.uri}:${scenario.line} " +
+            "SrcTags: ${scenario.sourceTagNames}"
+}
 
 class GoogleSteps : En {
     var arg1=0
@@ -30,6 +37,10 @@ class GoogleSteps : En {
         When("^User searches for Selenium$") { arg3=true }
 
         Then("^User can see Selenium results$") { Assert.assertTrue(arg3) }
+
+        After("@edge-cases") { scenario: Scenario ->
+            println("Edge: ${toString(scenario)}")
+        }
 
         After { scenario:Scenario ->
             arg2 = arg1 + arg2
