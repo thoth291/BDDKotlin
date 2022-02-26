@@ -4,12 +4,12 @@ import io.cucumber.java8.En
 import org.testng.Assert
 
 fun toString(scenario:Scenario): String {
-    return  "Name: ${scenario.name} " +
-            "ID: ${scenario.id} " +
-            "Status: ${scenario.status} " +
-            "Line: ${scenario.line} " +
-            "URI: ${scenario.uri}:${scenario.line} " +
-            "SrcTags: ${scenario.sourceTagNames}"
+    return  """Name: ${scenario.name}
+            ID: ${scenario.id}
+            Status: ${scenario.status}
+            Line: ${scenario.line}
+            URI: ${scenario.uri}:${scenario.line}
+            SrcTags: ${scenario.sourceTagNames}""".trimIndent()
 }
 
 class GoogleSteps : En {
